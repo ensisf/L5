@@ -31,12 +31,12 @@ export default {
   },
   props: {
     userpicLink: {
-      type: String
+      type: String,
+      default: 'http://placehold.it/50x50'
     }
   },
   data: () => ({
-    localUserpicLink: null,
-    previewLink: 'http://placehold.it/50x50'
+    localUserpicLink: null
   }),
   watch: {
     localUserpicLink() {
