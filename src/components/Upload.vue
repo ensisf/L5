@@ -4,7 +4,7 @@
     <input type="url" class="form-control" id="picture" v-model="localUserpicLink">
     <br>
     <div class="d-flex align-items-center">
-      <img :src="localUserpicLink ? localUserpicLink : previewLink" alt="thumb" width="50" height="50" class="img-thumbnail">
+      <img :src="localUserpicLink" alt="thumb" width="50" height="50" class="img-thumbnail">
       <input 
         type="file" 
         ref="userpic"
