@@ -48,9 +48,9 @@ export default {
       axios
         .post(`/users`, this.user)
         .then(res => {
-          console.log(res)
-          console.log(this)
-          console.log(userDefaults)
+        
+        
+        
           // Вернуть дефолтные значения
           this.user = userDefaults
         })
