@@ -16,7 +16,7 @@ const userDefaults = {
   id: 0,
   isActive: false,
   balance: '',
-  picture: '',
+  picture: 'http://placehold.it/128x128',
   age: 0,
   accessLevel: '',
   firstName: '',
@@ -47,13 +47,7 @@ export default {
     saveUser() {
       axios
         .post(`/users`, this.user)
-        .then(res => {
-          console.log(res)
-          console.log(this)
-          console.log(userDefaults)
-          // Вернуть дефолтные значения
-          this.user = userDefaults
-        })
+        .then(res => this.$router.push({ path: `/users/${res.data.id}` }))
         .catch(error => console.log(error))
     }
   }

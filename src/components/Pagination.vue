@@ -1,17 +1,61 @@
 <template>
   <nav>
     <ul class="pagination">
-      <li class="page-item"><a class="page-link" href="#">Назад</a></li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item"><a class="page-link" href="#">Далее</a></li>
+      <li 
+        class="page-item"
+        :class="currentPage == 1 ? 'disabled' : ''"
+         @click.prevent="move(currentPage - 1)"
+      >
+        <a class="page-link" href="#">Назад</a>
+      </li>
+      <li 
+        class="page-item"
+        v-for="(page, idx) in maxPages"
+        :key="idx"
+        :class="(idx + 1) === currentPage ? 'active' : ''"
+        @click.prevent="move(idx + 1)"
+      >
+        <a class="page-link" href="#">{{ idx + 1}}</a>
+      </li>      
+      <li 
+        class="page-item"
+        :class="currentPage == maxPages ? 'disabled' : ''"
+      >
+        <a 
+          class="page-link" 
+          href="#"
+          @click.prevent="move(currentPage + 1)"
+        >Далее</a>
+      </li>
     </ul>
   </nav>
 </template>
 
 <script>
 export default {
-  name: 'pagination'
+  name: 'pagination',
+  model: {
+    prop: 'currentPage'
+  },
+  props: {
+    maxPages: {
+      type: Number,
+      required: true
+    },
+    currentPage: {
+      type: Number,
+      required: true
+    }
+  },
+  methods: {
+    move(page) {
+      this.$emit('input', page)
+    }
+  }
 }
 </script>
+<style>
+.disabled {
+  pointer-events: none;
+}
+</style>

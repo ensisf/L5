@@ -12,6 +12,11 @@
     >Сохранить</button>
     <button 
       type="button" 
+      class="btn btn-warning mr-4"
+      @click="returnToList"
+    >Отмена</button>
+    <button 
+      type="button" 
       class="btn btn-danger"
       @click="deleteUser"
     >Удалить</button>
@@ -45,17 +50,16 @@ export default {
         .catch(error => console.log(error))
     },
     saveUser() {
-      axios.put(`/users/${this.user.id}`, this.user).catch(error => console.log(error))
+      axios.put(`/users/${this.id}`, this.user).catch(error => console.log(error))
     },
     deleteUser() {
       axios
-        .delete(`/users/${this.user.id}`)
-        .then(({ status }) => {
-          if (status === 200) {
-            this.$router.push({ path: '/users' })
-          }
-        })
+        .delete(`/users/${this.id}`)
+        .then(() => this.returnToList())
         .catch(error => console.log(error))
+    },
+    returnToList() {
+      this.$router.push({ path: '/users' })
     }
   }
 }

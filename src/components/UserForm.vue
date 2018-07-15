@@ -22,8 +22,8 @@
         <input type="text" class="form-control" id="address" v-model="localUser.address">
       </div>
       <div class="col col-sm-6 form-group">
-        <label for="registered">Зарегистрирован</label>
-        <input type="text" class="form-control" id="registered" v-model="localUser.registered">
+        <label>Зарегистрирован</label>
+        <datepicker v-model="localUser.registered"></datepicker>
       </div>
       <div class="col col-sm-6 form-group">
         <label for="age">Возраст</label>
@@ -51,8 +51,8 @@
         <upload v-model="localUser.picture"></upload>
       </div>
       <div class="col col-sm-12 form-group">
-        <label for="about">Дополнительная информация</label>
-        <textarea id="about" cols="30" rows="10" class="form-control" v-model="localUser.about"></textarea>
+        <label>Дополнительная информация</label>
+        <editor v-model="localUser.about"></editor>
       </div>
     </div>
   </div>
@@ -61,7 +61,9 @@
 export default {
   name: 'user-form',
   components: {
-    upload: () => import('@/components/Upload.vue')
+    upload: () => import('@/components/Upload.vue'),
+    editor: () => import('@/components/Editor.vue'),
+    datepicker: () => import('@/components/Datepicker.vue')
   },
   model: {
     prop: 'user',
@@ -84,12 +86,6 @@ export default {
         this.$emit('updateUser', this.localUser)
       }
     }
-    // user: {
-    //   deep: true,
-    //   handler() {
-    //     this.copyUser()
-    //   }
-    // }
   },
   created() {
     this.copyUser()

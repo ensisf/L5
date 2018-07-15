@@ -6,23 +6,15 @@
       :users="users">
       <template slot="table-head">
         <th>ID</th>
-        <th>Имя</th>
         <th>Фамилия</th>
-        <th>Еmail</th>
         <th>Телефон</th> 
-        <th>Место работы</th>
-        <th>Баланс</th>
       </template>
       <template slot="table-body" slot-scope="{ user }">
         <td>
           <router-link :to="'/users/' + user.id">#{{ user.id }}</router-link>
         </td>
-        <td>{{ user.firstName }}</td>
         <td>{{ user.lastName }}</td>
-        <td>{{ user.email }}</td>
         <td>{{ user.phone }}</td>
-        <td>{{ user.company }}</td>
-        <td>{{ user.balance }}</td>
       </template>
     </user-list>
   </div>

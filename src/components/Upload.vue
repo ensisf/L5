@@ -1,80 +1,72 @@
 <template>
-  <div>
-    <label for="picture">URL картинки</label>
-    <input type="url" class="form-control" id="picture" v-model="localUserpicLink">
+  <div ref="dropField" class="dz">
+    <label>URL картинки</label>
+    <input type="url" class="form-control" :value="imageLink" readonly>
     <br>
     <div class="d-flex align-items-center">
-      <img :src="localUserpicLink" alt="thumb" width="50" height="50" class="img-thumbnail">
-      <input 
-        type="file" 
-        ref="userpic"
-        hidden
-        @change="uploadImage"
-      >
-      <button 
-        type="button" 
-        class="btn btn-success ml-2"
-        @click="selectImage"
-      >Загрузить...</button>
+      <img :src="imageLink" alt="thumb" width="50" height="50" class="img-thumbnail mr-2">
+      <p>Перетащите файл сюда или кликните, чтобы загрузить.</p>
     </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+import Dropzone from 'dropzone'
 
 export default {
   name: 'upload',
   model: {
-    prop: 'userpicLink',
-    event: 'uploadImage'
+    prop: 'imageLink'
   },
   props: {
-    userpicLink: {
+    imageLink: {
       type: String,
-      default: 'http://placehold.it/50x50'
+      required: true
     }
   },
   data: () => ({
-    localUserpicLink: null
+    dz: null
   }),
-  watch: {
-    localUserpicLink() {
-      this.$emit('uploadImage', this.localUserpicLink)
+  mounted() {
+    this.dz = new Dropzone(this.zone, {
+      url: 'https://api.imgur.com/3/image',
+      headers: {
+        Authorization: `Client-ID 958f339f5ad1b4b`,
+        'Cache-Control': null,
+        'X-Requested-With': null
+      },
+      method: 'post',
+      paramName: 'image',
+      acceptedFiles: 'image/*',
+      maxFiles: 1,
+      success: (e, { data }) => {
+        this.setNewUserpic(data.link)
+      }
+    })
+  },
+  computed: {
+    zone() {
+      return this.$refs.dropField
     }
   },
-  created() {
-    this.copyLink()
+  beforeDestroy() {
+    this.dz.disable()
   },
   methods: {
-    copyLink() {
-      this.localUserpicLink = this.userpicLink.substring(0)
+    setNewUserpic(img) {
+      this.$emit('input', img)
     },
-    selectImage() {
-      this.$refs.userpic.click()
-    },
-    uploadImage() {
-      const URL = 'https://api.imgur.com/3/image'
-      const config = {
-        headers: {
-          Authorization: `Client-ID 958f339f5ad1b4b`
-        }
-      }
-      const input = this.$refs.userpic
-      const formdata = new FormData()
-
-      formdata.append('image', input.files[0])
-
-      axios
-        .post(URL, formdata, config)
-        .then(res => res.data)
-        .then(res => {
-          if (res.status === 200) {
-            this.localUserpicLink = res.data.link
-          }
-        })
-        .catch(error => console.log(error))
+    onClick() {
+      this.zone.click()
     }
   }
 }
 </script>
+<style>
+[readonly]{
+  pointer-events: none;
+}
+.dz *{
+  pointer-events: none;
+}
+</style>

@@ -8,7 +8,6 @@ Vue.use(Router)
 
 const router = new Router({
   mode: 'history',
-  exact: true,
   linkExactActiveClass: 'active',
   routes: [
     {
@@ -36,6 +35,14 @@ const router = new Router({
       path: '/add',
       name: 'add',
       component: () => import('@/views/Add.vue'),
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/tels',
+      name: 'tels',
+      component: () => import('@/views/Tels.vue'),
       meta: {
         requiresAuth: true
       }
