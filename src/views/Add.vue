@@ -47,7 +47,13 @@ export default {
     saveUser() {
       axios
         .post(`/users`, this.user)
-        .then(res => this.$router.push({ path: `/users/${res.data.id}` }))
+        .then(res => {
+        
+        
+        
+          // Вернуть дефолтные значения
+          this.user = userDefaults
+        })
         .catch(error => console.log(error))
     }
   }
