@@ -18,6 +18,9 @@ export default {
   data: () => ({
     editor: null
   }),
+  watch: {
+    value: 'updateEditor'
+  },
   computed: {
     input() {
       return this.$refs.editor
@@ -31,6 +34,11 @@ export default {
   },
   beforeDestroy() {
     this.editor.destroy()
+  },
+  methods: {
+    updateEditor(val) {
+      this.editor.setContent(val)
+    }
   }
 }
 </script>
