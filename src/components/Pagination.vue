@@ -12,10 +12,10 @@
         class="page-item"
         v-for="(page, idx) in maxPages"
         :key="idx"
-        :class="(idx + 1) === currentPage ? 'active' : ''"
-        @click.prevent="move(idx + 1)"
+        :class="page === currentPage ? 'active' : ''"
+        @click.prevent="move(page)"
       >
-        <a class="page-link" href="#">{{ idx + 1}}</a>
+        <a class="page-link" href="#">{{ page }}</a>
       </li>      
       <li 
         class="page-item"

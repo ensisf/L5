@@ -31,7 +31,7 @@ export default {
     this.dz = new Dropzone(this.zone, {
       url: 'https://api.imgur.com/3/image',
       headers: {
-        Authorization: `Client-ID 958f339f5ad1b4b`,
+        Authorization: 'Client-ID 958f339f5ad1b4b',
         'Cache-Control': null,
         'X-Requested-With': null
       },
@@ -44,29 +44,26 @@ export default {
       }
     })
   },
+  beforeDestroy() {
+    this.dz.disable()
+  },
   computed: {
     zone() {
       return this.$refs.dropField
     }
   },
-  beforeDestroy() {
-    this.dz.disable()
-  },
   methods: {
     setNewUserpic(img) {
       this.$emit('input', img)
-    },
-    onClick() {
-      this.zone.click()
     }
   }
 }
 </script>
 <style>
-[readonly]{
+[readonly] {
   pointer-events: none;
 }
-.dz *{
+.dz * {
   pointer-events: none;
 }
 </style>

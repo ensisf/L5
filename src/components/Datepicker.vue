@@ -25,7 +25,7 @@ export default {
     value: 'updateDatepicker'
   },
   mounted() {
-    pickmeup(this.input, {
+    this.datePicker = pickmeup(this.input, {
       format: 'd.m.Y',
       default_date: false,
       hide_on_select: true
@@ -35,7 +35,7 @@ export default {
     )
   },
   beforeDestroy() {
-    pickmeup(this.input).destroy()
+    this.datePicker.destroy()
   },
   computed: {
     input() {
@@ -44,11 +44,10 @@ export default {
   },
   methods: {
     openCalendar() {
-      pickmeup(this.input).show()
+      this.datePicker.show()
     },
     updateDatepicker() {
-      console.log(this.input)
-      pickmeup(this.input).set_date(this.value)
+      this.datePicker.set_date(this.value)
     }
   }
 }

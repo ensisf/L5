@@ -6,6 +6,11 @@
       type="button"
       @click="saveUser"
     >Сохранить</button>
+    <button 
+      class="btn btn-warning ml-2" 
+      type="button"
+      @click="returnToList"
+    >Отмена</button>
   </div>
 </template>
 
@@ -46,9 +51,12 @@ export default {
     },
     saveUser() {
       axios
-        .post(`/users`, this.user)
-        .then(res => this.$router.push({ path: `/users/${res.data.id}` }))
+        .post('/users', this.user)
+        .then(() => this.returnToList())
         .catch(error => console.log(error))
+    },
+    returnToList() {
+      this.$router.push('/users')
     }
   }
 }

@@ -1,10 +1,11 @@
 import axios from 'axios'
 import NProgress from 'nprogress'
 import { getToken } from '@/auth.js'
-import 'nprogress/nprogress.css'
+
+const baseURL = process.env.baseURL || 'http://localhost:3004'
 
 const inst = axios.create({
-  baseURL: 'http://localhost:3004',
+  baseURL: baseURL,
   headers: {
     Authorization: `Bearer ${getToken()}`
   }

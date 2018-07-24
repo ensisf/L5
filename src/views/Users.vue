@@ -4,7 +4,7 @@
     <user-list 
       v-else
       :users="users">
-      <template slot="table-head">
+      <template slot="table-th">
         <th>ID</th>
         <th>Имя</th>
         <th>Фамилия</th>
@@ -13,7 +13,7 @@
         <th>Место работы</th>
         <th>Баланс</th>
       </template>
-      <template slot="table-body" slot-scope="{ user }">
+      <template slot="table-td" slot-scope="{ user }">
         <td>
           <router-link :to="'/users/' + user.id">#{{ user.id }}</router-link>
         </td>
@@ -45,7 +45,7 @@ export default {
   methods: {
     getUsers() {
       axios
-        .get(`/users`)
+        .get('/users')
         .then(({ data }) => (this.users = data))
         .catch(error => console.log(error))
     }

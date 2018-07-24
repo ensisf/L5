@@ -27,7 +27,7 @@
       </div>
       <div class="col col-sm-6 form-group">
         <label for="age">Возраст</label>
-        <input type="number" class="form-control" id="age" v-model="localUser.age">
+        <input type="number" class="form-control" id="age" v-model.number="localUser.age">
       </div>
       <div class="col col-sm-6 form-group">
         <label for="company">Место работы</label>

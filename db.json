@@ -1,27 +1,11 @@
 {
   "users": [
     {
-      "id": 2,
-      "isActive": false,
-      "balance": "$1,263.63",
-      "picture": "https://i2.wp.com/www.catbreedslist.com/uploads/allimg/cat-pictures/Scottish-Fold-1.jpg",
-      "age": 30,
-      "accessLevel": "admin",
-      "firstName": "Freda",
-      "lastName": "England",
-      "company": "INRT",
-      "email": "freda.england@inrt.me",
-      "phone": "+7 (982) 545-2994",
-      "address": "982 Baughman Place, Kohatk, Federated States Of Micronesia, 5481",
-      "about": "Pariatur nisi dolor et labore velit nisi dolore. Cillum ut cillum non aliquip eu consequat. Ipsum qui sint pariatur commodo nulla tempor ad eiusmod irure voluptate ex ullamco esse eiusmod.",
-      "registered": "26.05.2014"
-    },
-    {
       "id": 3,
-      "isActive": true,
+      "isActive": false,
       "balance": "$2,962.41",
       "picture": "http://placehold.it/128x128",
-      "age": 34,
+      "age": "31",
       "accessLevel": "admin",
       "firstName": "Maddox",
       "lastName": "Gutierrez",
@@ -30,23 +14,7 @@
       "phone": "+7 (938) 577-3510",
       "address": "986 Kimball Street, Sanford, Arizona, 4243",
       "about": "Qui non ea do consectetur do excepteur reprehenderit elit. Pariatur veniam pariatur pariatur laboris ullamco. Duis sint exercitation ullamco deserunt dolore tempor commodo cupidatat voluptate nisi mollit mollit. Ad cupidatat incididunt ea incididunt sit exercitation qui labore proident. Non ullamco deserunt velit do ut velit cillum qui elit.",
-      "registered": "11.02.2014"
-    },
-    {
-      "id": 4,
-      "isActive": true,
-      "balance": "$1,570.48",
-      "picture": "http://placehold.it/128x128",
-      "age": 20,
-      "accessLevel": "guest",
-      "firstName": "Russell",
-      "lastName": "Shannon",
-      "company": "VISALIA",
-      "email": "russell.shannon@visalia.biz",
-      "phone": "+7 (929) 475-2345",
-      "address": "592 Louis Place, Herald, Vermont, 5118",
-      "about": "Tempor ipsum consequat excepteur ipsum ut mollit. Id labore excepteur minim reprehenderit esse proident excepteur adipisicing. Do reprehenderit voluptate ad reprehenderit consequat. Nulla quis exercitation excepteur amet quis sit. Sunt eiusmod quis ut elit commodo sunt occaecat incididunt duis est aute aute. Deserunt Lorem amet exercitation sunt ut ad dolor dolore.",
-      "registered": "23.01.2018"
+      "registered": "28.02.2014"
     },
     {
       "id": 5,
@@ -110,7 +78,7 @@
       "phone": "+7 (814) 583-3515",
       "address": "825 Randolph Street, Wells, Oregon, 6135",
       "about": "Est ea nulla duis magna tempor eu non id et excepteur eu veniam veniam et. Aute reprehenderit ad fugiat aliquip nulla. Culpa duis cillum irure cupidatat non. Aute cupidatat ullamco fugiat eiusmod nulla mollit tempor enim. Sit pariatur pariatur aliquip sit anim ea id commodo ipsum tempor est dolor amet deserunt. Veniam quis ullamco aute aliquip eu est in laborum voluptate velit sit ipsum in. Quis tempor labore occaecat mollit elit labore eiusmod.",
-      "registered": "11.09.2015"
+      "registered": "19.09.2015"
     },
     {
       "id": 10,
@@ -1460,8 +1428,8 @@
       "id": 96,
       "isActive": false,
       "balance": "$3,564.46",
-      "picture": "http://placehold.it/128x128",
-      "age": 34,
+      "picture": "https://i.imgur.com/YX5Jufz.jpg",
+      "age": 31,
       "accessLevel": "admin",
       "firstName": "Elise",
       "lastName": "Munoz",
@@ -1471,70 +1439,6 @@
       "address": "927 Colby Court, Sehili, Puerto Rico, 4744",
       "about": "Ipsum qui aute aliqua ullamco minim proident ullamco ad voluptate esse. Labore ea enim consectetur incididunt et nisi reprehenderit ullamco occaecat ut ipsum dolore velit aliqua. Laborum laboris commodo aliquip magna exercitation adipisicing eu ea est fugiat.",
       "registered": "05.05.2018"
-    },
-    {
-      "id": 97,
-      "isActive": true,
-      "balance": "$2,378.00",
-      "picture": "http://placehold.it/128x128",
-      "age": 30,
-      "accessLevel": "user",
-      "firstName": "Montgomery",
-      "lastName": "Graves",
-      "company": "NEBULEAN",
-      "email": "montgomery.graves@nebulean.name",
-      "phone": "+7 (898) 428-3158",
-      "address": "292 Corbin Place, Kiskimere, Florida, 3792",
-      "about": "Dolor occaecat laboris et nisi. Laborum ad pariatur occaecat id. Consectetur id reprehenderit pariatur elit velit voluptate.",
-      "registered": "06.10.2017"
-    },
-    {
-      "id": 98,
-      "isActive": false,
-      "balance": "",
-      "picture": "http://placehold.it/128x128",
-      "age": 0,
-      "accessLevel": "",
-      "firstName": "wwwwwwwwwwww",
-      "lastName": "",
-      "company": "",
-      "email": "",
-      "phone": "",
-      "address": "",
-      "about": "",
-      "registered": ""
-    },
-    {
-      "id": 99,
-      "isActive": false,
-      "balance": "",
-      "picture": "http://placehold.it/128x128",
-      "age": 0,
-      "accessLevel": "",
-      "firstName": "ascascac",
-      "lastName": "",
-      "company": "",
-      "email": "",
-      "phone": "",
-      "address": "",
-      "about": "",
-      "registered": ""
-    },
-    {
-      "id": 100,
-      "isActive": false,
-      "balance": "",
-      "picture": "https://i.imgur.com/oNwACrR.jpg",
-      "age": 0,
-      "accessLevel": "",
-      "firstName": "",
-      "lastName": "",
-      "company": "",
-      "email": "",
-      "phone": "",
-      "address": "",
-      "about": "",
-      "registered": ""
     }
   ]
 }

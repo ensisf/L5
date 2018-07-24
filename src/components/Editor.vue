@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <textarea ref="editor" cols="30" rows="10" class="form-control" :value="value"></textarea>
-  </div>
+  <textarea ref="editor" cols="30" rows="10" class="form-control" :value="value"></textarea>
 </template>
 
 <script>

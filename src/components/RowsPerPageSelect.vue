@@ -4,7 +4,7 @@
       <select 
         class="form-control" 
         :value="perPage"
-        @change="onChange"
+        @change="changeRowsCount"
         >
         <option 
           v-for="variant in variants" 
@@ -34,8 +34,8 @@ export default {
     }
   },
   methods: {
-    onChange($event) {
-      this.$emit('input', $event.target.value)
+    changeRowsCount({ target }) {
+      this.$emit('input', target.value)
     }
   }
 }

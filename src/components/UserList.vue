@@ -1,6 +1,5 @@
 <template>
   <div>
-    <slot name="eeeee"></slot>
     <rows-per-page 
       class="row mb-2" 
       v-if="users.length"
@@ -10,7 +9,7 @@
     <table class="table">
       <thead class="thead-dark">
         <tr>
-          <slot name="table-head">
+          <slot name="table-th">
             <th>ID</th>
             <th>Имя</th>
             <th>Фамилия</th>
@@ -19,7 +18,7 @@
       </thead>
       <tbody>
         <tr v-for="user in rowsToShow" :key="user.id">
-          <slot name="table-body" :user="user">
+          <slot name="table-td" :user="user">
             <td>
               <router-link :to="'/users/' + user.id">#{{ user.id }}</router-link>
             </td>
@@ -65,7 +64,10 @@ export default {
     }
   },
   watch: {
-    maxPages() {
+    maxPages: 'maxPagesHandler'
+  },
+  methods: {
+    maxPagesHandler() {
       if (this.currentPage > this.maxPages) {
         this.currentPage = this.maxPages
       }

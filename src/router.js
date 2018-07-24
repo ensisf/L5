@@ -52,15 +52,15 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
   NProgress.start()
-  if (to.matched.some(record => record.meta.requiresAuth)) {
-    if (!auth()) {
-      next({
-        path: '/',
-        query: { redirect: to.fullPath }
-      })
-    } else {
-      next()
-    }
+  if (!to.matched.some(record => record.meta.requiresAuth)) {
+    next()
+  }
+
+  if (!auth()) {
+    next({
+      path: '/',
+      query: { redirect: to.fullPath }
+    })
   } else {
     next()
   }

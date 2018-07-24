@@ -37,6 +37,9 @@ export default {
   computed: {
     id() {
       return this.$route.params.id
+    },
+    url() {
+      return `/users/${this.id}`
     }
   },
   mounted() {
@@ -45,21 +48,26 @@ export default {
   methods: {
     loadData() {
       axios
-        .get(`/users/${this.id}`)
+        .get(this.url)
         .then(({ data }) => (this.user = data))
         .catch(error => console.log(error))
     },
     saveUser() {
-      axios.put(`/users/${this.id}`, this.user).catch(error => console.log(error))
+      axios
+        .put(this.url, this.user)
+        .then(() => {
+          this.returnToList()
+        })
+        .catch(error => console.log(error))
     },
     deleteUser() {
       axios
-        .delete(`/users/${this.id}`)
+        .delete(this.url)
         .then(() => this.returnToList())
         .catch(error => console.log(error))
     },
     returnToList() {
-      this.$router.push({ path: '/users' })
+      this.$router.push('/users')
     }
   }
 }
