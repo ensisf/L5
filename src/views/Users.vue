@@ -1,6 +1,6 @@
 <template>
   <div>    
-    <div class="alert alert-warning" v-if="!users.length">Загрузка данных</div>
+    <div class="alert alert-warning" v-if="!total">Загрузка данных</div>
     <user-list 
       v-else
       :users="users">
@@ -29,25 +29,20 @@
 </template>
 
 <script>
-import axios from '@/axios.js'
-
 export default {
   name: 'users',
   components: {
     'user-list': () => import('@/components/UserList.vue')
   },
-  data: () => ({
-    users: []
-  }),
   mounted() {
-    this.getUsers()
+    this.$store.dispatch('loadUsers')
   },
-  methods: {
-    getUsers() {
-      axios
-        .get('/users')
-        .then(({ data }) => (this.users = data))
-        .catch(error => console.log(error))
+  computed: {
+    total() {
+      return this.$store.getters.usersCount
+    },
+    users() {
+      return this.$store.state.users
     }
   }
 }

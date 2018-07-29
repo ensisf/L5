@@ -1,5 +1,8 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">    
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">   
+    <a class="navbar-brand" href="#">
+      {{title}}
+    </a> 
     <div class="container collapse navbar-collapse">
       <ul class="navbar-nav">
         <router-link to="/" tag="li" class="nav-item">
@@ -14,6 +17,9 @@
         <router-link to="/tels" tag="li" class="nav-item">
           <a class="nav-link">Телефоны</a>
         </router-link>
+        <router-link to="/user-card" tag="li" class="nav-item">
+          <a class="nav-link">Профайл</a>
+        </router-link>
       </ul>
     </div>
   </nav>
@@ -21,6 +27,11 @@
 
 <script>
 export default {
-  name: 'navigation'
+  name: 'navigation',
+  computed: {
+    title() {
+      return this.$store.getters.siteName
+    }
+  }
 }
 </script>

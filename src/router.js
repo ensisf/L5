@@ -46,6 +46,14 @@ const router = new Router({
       meta: {
         requiresAuth: true
       }
+    },
+    {
+      path: '/user-card',
+      name: 'user-card',
+      component: () => import('@/views/UserCard.vue'),
+      meta: {
+        requiresAuth: true
+      }
     }
   ]
 })

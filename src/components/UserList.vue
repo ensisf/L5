@@ -6,6 +6,7 @@
       :variants="variantsList"
       v-model.number="perPage"
     ></rows-per-page>
+    <p>Всего пользователей <b class="text-success">{{ usersCount }}</b></p>
     <table class="table">
       <thead class="thead-dark">
         <tr>
@@ -37,6 +38,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'user-list',
   components: {
@@ -61,7 +64,10 @@ export default {
     rowsToShow() {
       const idxStart = (this.currentPage - 1) * this.perPage
       return this.users.slice(idxStart, idxStart + this.perPage)
-    }
+    },
+    ...mapGetters({
+      usersCount: 'usersCount'
+    })
   },
   watch: {
     maxPages: 'maxPagesHandler'

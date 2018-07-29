@@ -1,22 +1,6 @@
 {
   "users": [
     {
-      "id": 3,
-      "isActive": false,
-      "balance": "$2,962.41",
-      "picture": "http://placehold.it/128x128",
-      "age": "31",
-      "accessLevel": "admin",
-      "firstName": "Maddox",
-      "lastName": "Gutierrez",
-      "company": "ZILLACTIC",
-      "email": "maddox.gutierrez@zillactic.biz",
-      "phone": "+7 (938) 577-3510",
-      "address": "986 Kimball Street, Sanford, Arizona, 4243",
-      "about": "Qui non ea do consectetur do excepteur <b>reprehenderit </b>elit. Pariatur veniam pariatur pariatur laboris ullamco. Duis sint exercitation ullamco deserunt dolore tempor commodo cupidatat voluptate nisi mollit mollit. Ad cupidatat incididunt ea incididunt sit exercitation qui labore proident. Non ullamco deserunt velit do ut velit cillum qui elit.",
-      "registered": "28.02.2014"
-    },
-    {
       "id": 5,
       "isActive": true,
       "balance": "$2,250.39",
@@ -1007,22 +991,6 @@
       "address": "922 Bridgewater Street, Marysville, New Jersey, 2348",
       "about": "Deserunt Lorem aliquip minim eiusmod quis. Officia laboris proident laborum commodo et officia et aliqua laboris commodo culpa. Deserunt incididunt nisi velit amet dolor ex. Cupidatat officia laboris esse officia deserunt occaecat Lorem labore laborum consectetur deserunt reprehenderit non ad. Sint officia in amet cupidatat.",
       "registered": "01.02.2017"
-    },
-    {
-      "id": 70,
-      "isActive": true,
-      "balance": "$3,386.87",
-      "picture": "http://placehold.it/128x128",
-      "age": 39,
-      "accessLevel": "guest",
-      "firstName": "Buckley",
-      "lastName": "Curry",
-      "company": "COREPAN",
-      "email": "buckley.curry@corepan.us",
-      "phone": "+7 (999) 579-2230",
-      "address": "186 Ditmas Avenue, Gwynn, New York, 9221",
-      "about": "Minim est id nulla do dolore mollit commodo enim enim nulla sunt velit laborum. Fugiat cupidatat consectetur officia dolor aute officia veniam tempor duis ex irure dolore. Enim ex sit esse officia proident sit nulla. Quis dolore cillum cupidatat nostrud aute aliqua laboris eiusmod ex nisi in est. Excepteur ea in elit anim magna voluptate sit. Ut aliquip eu incididunt anim sunt. Ex ut anim minim sunt.",
-      "registered": "10.05.2017"
     },
     {
       "id": 71,
